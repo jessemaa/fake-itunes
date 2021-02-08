@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+        <html lang="en" xmlns:th="http://www.thymeleaf.org">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <script th:src="@{/js/bootstrap.min.js}" ></script>
+        <head>
+        <meta charset="UTF-8">
+        <title>Welcome</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <form action="#" th:action="@{/search}" th:object="${song}" method="post">
+            <input type="text" id="song" th:field="*{name}" placeholder="Search a song" required />
+            <button type="submit" value="Submit">Search</button>
+        </form>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">NOT (fake) iTUNES</h1>
+        <h1>Five random artists of the day are:</h1>
+        <div class="col-sm-4" th:each="artist:${artists}">
+            <h5 th:text="${artist.getName()}"></h5>
+        </div>
+        <h1>Five random songs of the day are:</h1>
+        <div class="col-sm-4" th:each="song:${songs}">
+            <h5 th:text="${song.getName()}"></h5>
+        </div>
+        <h1>Five random genres of the day are:</h1>
+        <div class="col-sm-4" th:each="genre:${genres}">
+            <h5 th:text="${genre.getName()}"></h5>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

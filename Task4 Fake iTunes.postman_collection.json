@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "b4edb1c3-c597-41cd-bf44-dd2a20348204",
+		"name": "Task4 Fake iTunes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"151\",\r\n    \"firstName\": \"Jesseboy\",\r\n    \"lastName\": \"Saarimaaboy\",\r\n    \"country\":\"Finlandboy\",\r\n    \"postalCode\":\"00360\",\r\n    \"phone\":\"+35850234234\",\r\n    \"email\":\"jesse@saarimaa.comboy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customers"
+					]
+				},
+				"description": "Get all the customers in database"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/customers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"customerId\": \"210\",\r\n        \"firstName\": \"Sean\",\r\n        \"lastName\": \"Skinner\",\r\n        \"country\": \"South Africa\",\r\n        \"postalCode\": \"123123\",\r\n        \"phone\": \"+55 (12) 123123123\",\r\n        \"email\": \"sean@123.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customers"
+					]
+				},
+				"description": "Add a new customer to database"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/customers/210",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"customerId\": \"210\",\r\n        \"firstName\": \"Sean\",\r\n        \"lastName\": \"Skinner\",\r\n        \"country\": \"Norway\",\r\n        \"postalCode\": \"123123\",\r\n        \"phone\": \"+55 (12) 123123123\",\r\n        \"email\": \"sean@123.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customers/210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customers",
+						"210"
+					]
+				},
+				"description": "Update existing customer"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/customer/countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"countries"
+					]
+				},
+				"description": "Gets all the countries by their customers in descending order"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/customer/highestspenders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/highestspenders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"highestspenders"
+					]
+				},
+				"description": "Gets all the customers with highest spending in first (descending order)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/customer/mostpopulargenre/12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/mostpopulargenre/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"mostpopulargenre",
+						"12"
+					]
+				},
+				"description": "Gets the customers favorite genre of music by customer ID. In case theres multiple, displays both"
+			},
+			"response": []
+		}
+	]
+}
