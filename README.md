@@ -2,6 +2,9 @@
 
 This is an web application with REST API's that return data from the database, made with
 Spring, Thymeleaf and SQLite. It has also been published to Heroku in a Docker container.
+https://fake-itunes-byjesse.herokuapp.com/ <-- Heroku without Docker
+http://fake-itunes-byjesse-docker.herokuapp.com/ <-- Heroku with Docker container
+
 ## Main specifications
 
 - See the working application in browser
